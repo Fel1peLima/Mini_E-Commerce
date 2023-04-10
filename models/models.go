@@ -2,11 +2,11 @@ package models
 
 type User struct {
 	ID    int    `gorm:"column:user_id"`
-	Name  string `gorm:"column:nome"`
-	Email string `gorm:"column:email"`
+	Name  string `json:"nome" gorm:"column:nome"`
+	Email string `json:"email" gorm:"column:email"`
 	/* Birth  time.Time `gorm:"column:nascimento"`*/
-	Sexo   string  ` gorm:"column:sexo"`
-	Amount float64 `gorm:"column:quantia"`
+	Sexo   string  `json:"sexo" gorm:"column:sexo"`
+	Amount float64 `json:"quantia" gorm:"column:quantia"`
 }
 
 func (User) TableName() string {
